@@ -2,7 +2,7 @@ import TextField from '@mui/material/TextField'
 import Button from '@mui/material/Button'
 import {useState} from 'react'
 import { useDispatch } from 'react-redux'
-import { setToken, updateUsername, setId } from '../slices/AccountSlice'
+import { setToken, updateUsername, setId, setCartId } from '../slices/AccountSlice'
 
 export default function Login()
 {
@@ -37,6 +37,9 @@ export default function Login()
             dispatch(updateUsername({username}))
             const id = await getUserIdByName(username)
             dispatch(setId({id}))
+            const cartResponse = await fetch("https://fakestoreapi.com/carts/user/" + id).then(res => res.json());
+            const cartId = cartResponse[0].id;
+            dispatch(setCartId({cartId}));
             setStatus("Login successful!")
         } catch (error) {
             setStatus("Login error. Please check your username and password.")

@@ -1,17 +1,16 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-/**
- * @typedef Account
- * @property {"setId"|"updateUsername"|"setLastName"|"setEmail"|} type
- */
+
+//All  necessary account details are stored in this slice
 
 
 const initialState = {
   id: 0,
+  cartId: 0,
   username: "",
   lastName: "",
   email: "",
-  token: ""
+  token: "",
 };
 
 const accountSlice = createSlice({
@@ -32,11 +31,14 @@ const accountSlice = createSlice({
     },
     setToken: (state, {payload}) => {
         state.token = payload.token;
+    },
+    setCartId: (state, {payload}) => {
+      state.cartId = payload.cartId;
     }
   },
 });
 
-export const { setId, setEmail, updateUsername, setLastName, setToken } = accountSlice.actions;
+export const { setId, setEmail, updateUsername, setLastName, setToken, setCartId } = accountSlice.actions;
 
 
 export default accountSlice.reducer;

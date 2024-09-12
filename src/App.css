@@ -80,3 +80,28 @@ hr {
   border-right: 1px solid black;
   border-radius: 20px;
 }
+
+.aligned-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.aligned-row:hover {
+  cursor: pointer;
+}
+
+td, th {
+  border: 1px solid black;
+  text-align: left;
+  padding: 8px;
+}
+
+table {
+  display: flex;
+}
+
+.addedToCart {
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+}

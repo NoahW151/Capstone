@@ -1,5 +1,6 @@
 import {useNavigate} from "react-router-dom"
 
+//Product card on the list page
 export default function Product({id, title, price, description, category, image, rating})
 {
     const navigate = useNavigate();
