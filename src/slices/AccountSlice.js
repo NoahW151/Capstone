@@ -1,7 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 /**
- * Each transaction is recorded as an object with the following properties.
  * @typedef Account
  * @property {"setId"|"updateUsername"|"setLastName"|"setEmail"|} type
  */

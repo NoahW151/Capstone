@@ -12,6 +12,8 @@ function App() {
 
   return (
     <>
+    <h1 className='header'>The Capstore</h1>
+    <hr></hr>
     <NavBar/>
       <Routes>
           <Route path='/' element={<Home/>}/>
@@ -19,7 +21,7 @@ function App() {
           <Route path='/register' element={<Products/>}/>
           <Route path='/login' element={<Login/>}/>
           <Route path='/products' element={<Products/>}/>
-          <Route path='/products/:id' element={<SingleProduct/>}/>
+          <Route path='/product/:id' element={<SingleProduct/>}/>
           <Route path='/cart' element={<Cart/>}/>
         </Routes>
     </>

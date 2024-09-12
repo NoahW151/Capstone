@@ -4,7 +4,7 @@ export default function Product({id, title, price, description, category, image,
 {
     const navigate = useNavigate();
     return (
-        <div className="product-listing" onClick={() => navigate("/products/" + id)}>
+        <div className="product-listing" onClick={() => navigate("/product/" + id)}>
             <h3>{title}</h3>
             <img src={image} alt={title}></img>
             <p>${price}</p>
