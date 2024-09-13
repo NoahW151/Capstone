@@ -19,6 +19,10 @@ export default function Cart()
             return null;
         }
     }
+    const deleteProduct = async (prodId) => {
+        const response = await fetch("https://fakestoreapi.com/products/" + prodId).then(res => res.json());
+        setCartItems(cartItems.filter((item) => item.id == prodId));
+    }
     useEffect(() => {
         getCartItems();
     }, [])
@@ -32,10 +36,11 @@ export default function Cart()
                         <tr>
                             <th>Product Title</th>
                             <th>Quantity</th>
-                            {cartItems.map((item) => (<CartItem prodId={item.productId} quantity={item.quantity}/>))}
+                            <th>Action</th>
+                            {cartItems.map((item) => (<CartItem prodId={item.productId} quantity={item.quantity} deleteProduct={deleteProduct}/>))}
                         </tr>
                     </table>
-                    <div className="aligned-row" onClick={() => alert("Payment confirmed")}>
+                    <div className="aligned-row" onClick={() => alert("Your order has been placed")}>
                         Checkout <ShoppingCartCheckoutIcon></ShoppingCartCheckoutIcon>
                     </div>
                 </div>

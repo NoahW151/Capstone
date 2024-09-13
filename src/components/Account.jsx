@@ -24,7 +24,7 @@ export default function Account()
                 <h1>Please login to view this page</h1>
             )}
             {user && (
-                <div>
+                <div className="accountPage">
                     <h2>Welcome {user.username}!</h2>
                     <p>Email: {user.email}</p>
                     <p>Phone #: {user.phone}</p>

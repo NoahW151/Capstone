@@ -1,6 +1,7 @@
 import {useEffect, useState} from "react"
+import Button from "@mui/material/Button"
 
-export default function CartItem({prodId, quantity})
+export default function CartItem({prodId, quantity, deleteProduct})
 {
     const [prod, setProd] = useState("");
     const getProd = async () => {
@@ -14,6 +15,7 @@ export default function CartItem({prodId, quantity})
         <tr>
             <td>{prod.title}</td>
             <td>{quantity}</td>
+            <td><Button color="error" onClick={() => deleteProduct(prodId)}>Delete</Button></td>
         </tr>
     )
 }
